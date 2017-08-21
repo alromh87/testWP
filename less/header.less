@@ -2,22 +2,29 @@ header{
 	&#header{
 		//.Borders();
 		.marginBottom();
+		width: 400px;
 		.sitelogo{
 			//float: left;
 			//margin-right: 1em;
 			text-align: center;
 			display: flex;
-  			align-items: center;
-  			justify-content: center;
+			align-items: center;
+			justify-content: center;
 			img{
 				&#logo{
-					.roundCorners();
+//					.roundCorners();
 					max-width: 300px;
-				}	
+				}
 			}	
 		}
 		.sitetitle{
 			text-align: center;
+			h1{
+				font-size:1.3rem;
+			}
+			h2{
+				font-size:.9rem;
+			}
 		}
 		
 		a{
@@ -31,9 +38,17 @@ header{
 @media (min-width: @screen-sm) { 
 	header{
 		&#header{
+			position: absolute;
+			left: 0;
 			.sitelogo{
 				float: left;
 				margin-right: 1em;
+				img{
+					&#logo{
+						max-height: 200px;
+						z-index: 100;
+					}
+				}
 			}
 			.sitetitle{
 				text-align: left;

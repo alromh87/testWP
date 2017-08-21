@@ -8,9 +8,6 @@
  */
 ?>
 <?php get_header(); ?>
-		<section id="slider">
-			<?php get_template_part( 'part' , 'slider' ); ?>
-		</section>
 		<div class="row">
 			<div class="col-md-9">
 				<section id="masonryContainer" class="content">

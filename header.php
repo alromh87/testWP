@@ -35,79 +35,36 @@
 
 <body <?php body_class(); ?>>
 <nav id="top-menu" class="navbar navbar-default">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 visible-sm-inline-block visible-md-inline-block visible-lg-inline-block ">
-					<?php get_sidebar( 'top-bar' ); ?>
-				</div>
-				<nav class="col-sm-4 topSocials">
-					<div class="sidebar-top">
-						<?php
-						if ( get_theme_mod( 'icon1_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon1_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-facebook-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon2_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon2_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-twitter-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon3_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon3_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-google-plus-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon4_link' ) ) { ?>
-						<a href="<?php echo esc_url(get_theme_mod( 'icon4_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-instagram fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon5_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon5_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-linkedin-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon6_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon6_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-youtube-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon7_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon7_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-pinterest-square fa-2x"></i>
-						</a>
-						<?php }
-						if ( get_theme_mod( 'icon8_link' ) ) { ?>
-						<a href="<?php echo esc_url( get_theme_mod( 'icon8_link' ) ); ?>" target="_blank"> 
-							<i class="fa fa-tumblr-square fa-2x"></i>
-						</a>
-						<?php } ?>
-					</div>
-				</nav>
-			</div>
-			
-		</div>
-	</nav>
-
-	<div class="container" role="main"> <!-- this will close in footer.php -->
 		<header id="header">
-			<div class="row">
-				<div class="col-sm-12">
-					<?php if ( get_header_image() ) { ?>
-						<div class="sitelogo">
-							<a href="<?php echo esc_url( home_url() ); ?>">
-								<img src="<?php header_image(); ?>" height="<?php esc_attr( get_custom_header()->height,'iamsocial' ); ?>" width="<?php esc_attr( get_custom_header()->width, 'iamsocial' ); ?>" alt="<?php esc_attr_e( 'Logo', 'iamsocial' ); ?>" class="img-responsive"  id='logo' />
-							</a>
-						</div>
-					<?php } ?>
-						<div class="sitetitle">
-							<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-							<h2><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'description' ); ?></a></h2>
-						</div>
+			<div class="col-sm-12">
+			<?php if ( get_header_image() ) { ?>
+				<div class="sitelogo">
+					<a href="<?php echo esc_url( home_url() ); ?>">
+						<img src="<?php header_image(); ?>" height="<?php esc_attr( get_custom_header()->height,'iamsocial' ); ?>" width="<?php esc_attr( get_custom_header()->width, 'iamsocial' ); ?>" alt="<?php esc_attr_e( 'Logo', 'iamsocial' ); ?>" class="img-responsive"  id='logo' />
+					</a>
+				</div>
+			<?php } ?>
+				<div class="sitetitle">
+					<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'description' ); ?></a></h2>
 				</div>
 			</div>
 		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 visible-sm-inline-block visible-md-inline-block visible-lg-inline-block ">
+					<?php get_sidebar( 'top-bar-left' ); ?>
+				</div>
+				<div class="col-sm-8 visible-sm-inline-block visible-md-inline-block visible-lg-inline-block ">
+					<?php get_sidebar( 'top-bar-right' ); ?>
+				</div>
+
+
+
+			</div>
+		</div>
+	</nav>
+
 
 
 	<nav id="main-menu" class="navbar navbar-default" role="navigation">
@@ -135,9 +92,13 @@
 				?>
 			</div>
 		</div>
-	</nav>		
-
-		   
+	</nav>
+<?php if(is_front_page()){?>
+                <section id="slider">
+                        <?php get_template_part( 'part' , 'slider' ); ?>
+                </section>
+<?php } ?>
+	<div class="container" role="main"> <!-- this will close in footer.php -->
 
 
 

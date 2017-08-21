@@ -15,11 +15,6 @@
  */
 ?>
 <?php get_header(); ?>
-
-		<section id="slider">
-			<?php get_template_part( 'part' , 'slider' ); ?>
-		</section>
-
 		<section id="masonryContainer" class="content">
 			<?php get_template_part( 'part' , 'content' ); ?>
 		</section>

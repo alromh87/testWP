@@ -92,10 +92,10 @@ function iamsocial_sidebar_widgets_init() {
 add_action( 'widgets_init', 'iamsocial_sidebar_widgets_init' );
 
 //Sidebar for top menu (i.e: perfect place for search bar widget)
-function iamsocial_top_bar_widgets_init() {
+function iamsocial_top_bar_widgets_left_init() {
 	$args_sidebar = array(
-		'name' => __( 'Top bar widgets','iamsocial' ),
-		'id' => 'top-bar',
+		'name' => __( 'Top bar widgets left','iamsocial' ),
+		'id' => 'top-bar-left',
 		'description' => __( 'Add widgets here. Recommended: Search bar or Custom menu. Note: It is recommended to use only one widget in this area. If this widget area is empty, by default, the search bar is shown.','iamsocial' ),
 		'before_widget' => '<div class="sidebar-top">',
 		'after_widget' => '</div>',
@@ -104,7 +104,20 @@ function iamsocial_top_bar_widgets_init() {
 	);
 	register_sidebar( $args_sidebar );
 }
-add_action( 'widgets_init', 'iamsocial_top_bar_widgets_init' );
+function iamsocial_top_bar_widgets_right_init() {
+	$args_sidebar = array(
+		'name' => __( 'Top bar widgets rigth','iamsocial' ),
+		'id' => 'top-bar-right',
+		'description' => __( 'Add widgets here. Recommended: Search bar or Custom menu. Note: It is recommended to use only one widget in this area. If this widget area is empty, by default, the search bar is shown.','iamsocial' ),
+		'before_widget' => '<div class="sidebar-top">',
+		'after_widget' => '</div>',
+		'before_title' => '<small>',
+		'after_title' => '</small>',
+	);
+	register_sidebar( $args_sidebar );
+}
+add_action( 'widgets_init', 'iamsocial_top_bar_widgets_left_init' );
+add_action( 'widgets_init', 'iamsocial_top_bar_widgets_right_init' );
 
 //Sidebar footer LEFT
 function iamsocial_footer_left_widgets_init() {

@@ -1,17 +1,20 @@
 .carousel{
+	overflow: hidden;
+	width: 100%;
+	box-sizing: border-box;
+	height: ~"calc( 100vh - 150px )";
 	.marginBottom();
 	/**/
 	.carousel-inner, img{
-		.roundCorners(50px);
+		width:100%;
 	}
 	.carousel-control{ //.carousel-indicators li
 		&.left{
-			border-bottom-left-radius: 50px;
-
+//			border-bottom-left-radius: 50px;
 		}
 		&.right{
-			border-top-right-radius: 50px;
-			border-bottom-right-radius: 50px;
+//			border-top-right-radius: 50px;
+//			border-bottom-right-radius: 50px;
 		}
 	}	
 }
